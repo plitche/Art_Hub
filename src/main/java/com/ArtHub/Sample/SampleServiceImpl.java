@@ -1,15 +1,15 @@
 package com.artHub.sample;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class SampleServiceImpl implements SampleService {
 
-    @Autowired
-    SampleDAO sampleDAO;
+    private final SampleDAO sampleDAO;
 
     @Override
     public List<String> findUsers() {

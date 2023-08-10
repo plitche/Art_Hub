@@ -1,20 +1,27 @@
 package com.artHub.sample;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-@Controller()
+@Slf4j
+@AllArgsConstructor
+@Controller
 public class SampleController {
 
-    @Autowired
-    SampleService sampleService;
+    private final SampleService sampleService;
 
     @GetMapping("/sample")
     public @ResponseBody List<String> findUsers() {
+        log.trace("Trace Level 테스트");
+        log.debug("DEBUG Level 테스트");
+        log.info("INFO Level 테스트");
+        log.warn("Warn Level 테스트");
+        log.error("ERROR Level 테스트");
         return sampleService.findUsers();
     }
 }
