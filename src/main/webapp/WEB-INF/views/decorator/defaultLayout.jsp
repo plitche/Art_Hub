@@ -28,8 +28,6 @@
 
 </script>
 <body id="page-top">
-    <div>
-        <sitemesh:write property='body'/>
-    </div>
+    <sitemesh:write property='body'/>
 </body>
 </html>
