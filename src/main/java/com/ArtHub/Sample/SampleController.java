@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 public class SampleController {
 
-    // private final SampleService sampleService;
+     private final SampleService sampleService;
 
     @GetMapping("/sample")
     public @ResponseBody List<String> findUsers() {
@@ -23,10 +23,7 @@ public class SampleController {
         log.info("INFO Level 테스트");
         log.warn("Warn Level 테스트");
         log.error("ERROR Level 테스트");
-        // return sampleService.findUsers();
-        List<String> test = new ArrayList<>();
-        test.add("123");
-        return test;
+        return sampleService.findUsers();
     }
 
     @GetMapping("/")
