@@ -1,5 +1,5 @@
 <configuration scan="true" scanPeriod="30 seconds">
-    <property name="LOGS_PATH" value="C:\Users\Yongsoo Kwon\Desktop\Plitche\Project\Art_Hub\logs" />
+    <springProperty scope="context" name="LOGS_PATH" source="logs.path" />
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
